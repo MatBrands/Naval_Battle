@@ -13,7 +13,6 @@ class Game:
         self.i = 0
         self.j = 0
         self.shot_try = 0
-        self.test = 0
 
     def on_press(self, key) -> bool:
         if str(key) == 'Key.up':
@@ -127,7 +126,6 @@ class Game:
         clear()
 
     def shot(self, number_of_shots: int = 3) -> None:
-        self.test += 1
         while self.shot_try%4 < number_of_shots:
             self.show_bf()
             
