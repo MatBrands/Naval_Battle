@@ -17,7 +17,7 @@ Esse projeto utiliza as seguintes bibliotecas:
 - ...
 
 ## Instalação/Execução
-Foi utilizado o [Python](https://www.python.org/) v3.10.9.
+Foi utilizado o [Python](https://www.python.org/) v3.10.15.
 
 ### Conda
 No desenvolvimento foi utilizado o gerenciador de pacotes e ambientes [Conda](https://conda.io/). Portanto para prosseguir necessita-se de sua [instalação](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).
