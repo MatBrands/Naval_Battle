@@ -108,7 +108,7 @@ class Game:
         current_board = [item.copy() for item in self.visible_board]
         
         while not self.acess:
-            self.show_board(current_board)
+            self.print_board(current_board)
 
             with keyboard.Listener(on_press=self.on_press) as listener:
                 listener.join()
@@ -133,7 +133,7 @@ class Game:
             
         self.shot_try+=1
     
-    def show_board(self, current_board: list) -> None:
+    def print_board(self, current_board: list) -> None:
         letter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
         clear()
         
