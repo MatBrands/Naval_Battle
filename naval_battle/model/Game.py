@@ -77,7 +77,6 @@ class Game:
                             if self.board[line][i+1] not in '~':
                                 status = False
                                 break
-                            
                         if i-1 >= 0:
                             if self.board[line][i-1] not in '~':
                                 status = False
@@ -100,7 +99,7 @@ class Game:
             if status:
                 current_number+=1
     
-    def show_bf(self) -> None:
+    def battlefield(self) -> None:
         self.i = 0
         self.j = 0
         self.acess = False
@@ -127,7 +126,7 @@ class Game:
 
     def shot(self, number_of_shots: int = 3) -> None:
         while self.shot_try%4 < number_of_shots:
-            self.show_bf()
+            self.battlefield()
             
         self.shot_try+=1
     
