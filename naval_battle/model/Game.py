@@ -13,7 +13,8 @@ class Game:
         self.i = 0
         self.j = 0
         self.shot_try = 0
-
+        self.tentative = 0
+    
     def on_press(self, key) -> bool:
         if str(key) == 'Key.up':
             self.i -= 1
@@ -100,8 +101,6 @@ class Game:
                 current_number+=1
     
     def battlefield(self) -> None:
-        self.i = 0
-        self.j = 0
         self.acess = False
         current_board = [item.copy() for item in self.visible_board]
         
@@ -122,17 +121,33 @@ class Game:
                     self.shot_try += 1
         
         input()
+        
         clear()
-
-    def shot(self, number_of_shots: int = 3) -> None:
-        while self.shot_try%4 < number_of_shots:
+        
+        if self.shot_try%4 == 3:
+            self.print_board(self.visible_board)
+            input("Prosseguir ")
+    
+    def shot(self) -> True:
+        self.i = 0
+        self.j = 0
+        self.tentative += 1
+        
+        while self.shot_try%4 < 3:
             self.battlefield()
+            if self.check_victory():
+                return False
             
         self.shot_try+=1
+        
+        return True
     
     def print_board(self, current_board: list) -> None:
         letter = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
         clear()
+        
+        print(f'Tentativa: {self.tentative}')
+        print(f'Tiro: {self.shot_try%4} de 3')
         
         for i in range (LEN_BOARD+1):
             if i: print(i, end='   ')
@@ -159,3 +174,12 @@ class Game:
                 elif current_board[i][j] in '5':
                     print(colored(current_board[i][j], 'magenta'), end='   ')
             print()
+    
+    def check_victory(self) -> bool:
+        for i in range(LEN_BOARD):
+            for j in range(LEN_BOARD):
+                if self.board[i][j] not in '~':
+                    if self.board[i][j] != self.visible_board[i][j]:
+                        return False
+        
+        return True

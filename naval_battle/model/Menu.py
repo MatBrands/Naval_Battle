@@ -2,6 +2,13 @@ from termcolor import colored
 from pynput import keyboard
 from model.clear import clear
 
+def set_menu(title: list, items: list) -> int:
+    menu = Menu()
+    menu.set_title(title)
+    menu.set_items(items)
+    option = menu.start_menu()
+    return option
+
 class Menu:
     def on_press(self, key) -> bool:
         if str(key) == 'Key.up':
