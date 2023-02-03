@@ -37,7 +37,7 @@ class Menu:
 
             for i in range(self.elements):
                 if self.option % self.elements == i:
-                    if current_menu[i] in ['Sair', 'Retornar']:
+                    if current_menu[i] in ['Sair', 'Retornar', 'Encerrar']:
                         current_menu[i] = colored(current_menu[i], 'red')
                     else:
                         current_menu[i] = colored(current_menu[i], 'green')

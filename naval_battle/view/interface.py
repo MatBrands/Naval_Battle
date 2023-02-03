@@ -25,7 +25,7 @@ def selection_game() -> bool:
 
 def player_vs_machine(bf: Game) -> bool:
     if bf.shot():
-        if set_menu(title = '', items=['Continuar', 'Sair']):
+        if set_menu(title = '', items=['Continuar', 'Encerrar']):
             return False
         return True
     else:
