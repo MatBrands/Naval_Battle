@@ -50,7 +50,7 @@ def selection_game() -> bool:
 
 def player_vs_machine(bf: Game) -> bool:
     if bf.shot():
-        if set_menu(title = '', items=['Continuar', 'Encerrar']):
+        if set_menu(title = '', items=['Atacar', 'Encerrar']):
             return False
         return True
     else:
@@ -70,14 +70,14 @@ def player_vs_player_local(bf_1: Game, bf_2: Game) -> bool:
     
     while True:
         if bf_2.shot() and not bf_1.check_victory():
-            if set_menu(title = 'Turno do Player 1', items=['Continuar', 'Encerrar']):
+            if set_menu(title = 'Turno do Player 2', items=['Atacar', 'Encerrar']):
                 surrender_1 = True
                 break
         else:
             break
         
         if bf_1.shot() and not bf_2.check_victory():
-            if set_menu(title = 'Turno do Player 2', items=['Continuar', 'Encerrar']):
+            if set_menu(title = 'Turno do Player 1', items=['Atacar', 'Encerrar']):
                 surrender_2 = True
                 break
         else:
