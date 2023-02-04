@@ -39,6 +39,8 @@ def selection_game() -> bool:
             vessel = set_menu(f'Tamanho da embarcação nº {i+1}: ', range(1, 6))+1
             bf_2.set_vesel_manual(vessel)
             
+        player_vs_player_local(bf_1, bf_2)
+        
     elif option == 2:
         pass
     elif option == 3:
@@ -58,6 +60,40 @@ def player_vs_machine(bf: Game) -> bool:
         if bf.shot_try > 1:
             saida[1] += 's'
         
-        print('Vitória ! ')
+        print('Vitória !')
         input(f'{bf.tentative} {saida[0]}, com um total de {bf.shot_try+1} {saida[1]}')
         return False
+    
+def player_vs_player_local(bf_1: Game, bf_2: Game) -> bool:
+    surrender_1 = False
+    surrender_2 = False
+    
+    while True:
+        if bf_2.shot() and not bf_1.check_victory():
+            if set_menu(title = 'Turno do Player 1', items=['Continuar', 'Encerrar']):
+                surrender_1 = True
+                break
+        else:
+            break
+        
+        if bf_1.shot() and not bf_2.check_victory():
+            if set_menu(title = 'Turno do Player 2', items=['Continuar', 'Encerrar']):
+                surrender_2 = True
+                break
+        else:
+            break
+            
+    if surrender_1:
+        print('Vitória do Player 2 !')
+    elif surrender_2:
+        print('Vitória do Player 1 !')
+    elif bf_1.shot_try < bf_2.shot_try:
+        print('Vitória do Player 2 !')
+    elif bf_1.shot_try > bf_2.shot_try:
+        print('Vitória do Player 2 !')
+    else:
+        print('Empate')
+        
+    print(f'Player 1: {bf_2.tentative+1} tentativas, com um total de {bf_2.shot_try+1} erros')
+    input(f'Player 2: {bf_1.tentative+1} tentativas, com um total de {bf_1.shot_try+1} erros')
+        
