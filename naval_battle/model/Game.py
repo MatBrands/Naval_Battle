@@ -15,6 +15,7 @@ class Game:
         self.orientation = 0
         self.shot_try = 0
         self.tentative = 0
+        self.shots_count = 0
     
     def on_press(self, key) -> bool:
         if str(key) == 'Key.up':
@@ -167,6 +168,7 @@ class Game:
         
         while self.shot_try%4 < 3:
             self.battlefield()
+            self.shots_count += 1
             if self.check_victory():
                 return False
             

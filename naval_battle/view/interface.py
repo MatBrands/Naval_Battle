@@ -57,11 +57,11 @@ def player_vs_machine(bf: Game) -> bool:
         saida = ['Tentativa', 'Erro']
         if bf.tentative > 1:
             saida[0] += 's'
-        if bf.shot_try > 1:
+        if bf.shots_count > 1:
             saida[1] += 's'
         
         print('Vitória !')
-        input(f'{bf.tentative} {saida[0]}, com um total de {bf.shot_try+1} {saida[1]}')
+        input(f'{bf.tentative} {saida[0]}, com um total de {bf.shots_count} {saida[1]}')
         return False
     
 def player_vs_player_local(bf_1: Game, bf_2: Game) -> bool:
@@ -87,13 +87,13 @@ def player_vs_player_local(bf_1: Game, bf_2: Game) -> bool:
         print('Vitória do Player 2 !')
     elif surrender_2:
         print('Vitória do Player 1 !')
-    elif bf_1.shot_try < bf_2.shot_try:
+    elif bf_1.shots_count < bf_2.shots_count:
         print('Vitória do Player 2 !')
-    elif bf_1.shot_try > bf_2.shot_try:
+    elif bf_1.shots_count > bf_2.shots_count:
         print('Vitória do Player 2 !')
     else:
         print('Empate')
         
-    print(f'Player 1: {bf_2.tentative+1} tentativas, com um total de {bf_2.shot_try+1} erros')
-    input(f'Player 2: {bf_1.tentative+1} tentativas, com um total de {bf_1.shot_try+1} erros')
+    print(f'Player 1: {bf_2.tentative} tentativas, com um total de {bf_2.shots_count} erros')
+    input(f'Player 2: {bf_1.tentative} tentativas, com um total de {bf_1.shots_count} erros')
         
