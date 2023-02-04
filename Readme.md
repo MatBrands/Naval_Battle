@@ -14,11 +14,11 @@ Conteúdo:
 ## Tecnologias
 Esse projeto utiliza as seguintes bibliotecas:
 
-- Python = 3.10.15
-- termcolor
-- pynput
+- python
 - os
+- pynput
 - random
+- termcolor
 
 ## Instalação/Execução
 Foi utilizado o [Python](https://www.python.org/) v3.10.15.
