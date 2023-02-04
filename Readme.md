@@ -115,7 +115,7 @@ Projeto desenvolvido pelo Dev:
 
 ## Organização do projeto
 ```sh
-Naval_Battle
+.Naval_Battle
     ├── License
     ├── Readme.md
     ├── naval_battle
