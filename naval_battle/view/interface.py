@@ -23,10 +23,13 @@ def selection_game() -> bool:
         input("#"*50)
         
         number_of_vessels = set_menu([f'{"Player: 1": ^20}\n', 'Selecione a quantidade de embarcações: '], range(1, 11))+1
-        for i in range (number_of_vessels):
-            vessel = set_menu(f'Tamanho da embarcação nº {i+1}: ', range(1, 6))+1
-            bf_1.set_vesel_manual(vessel)
         
+        if set_menu(title='Como deseja estabelecer as embarcações ?', items=['Automático', 'Manual']):
+            for i in range (number_of_vessels):
+                vessel = set_menu(f'Tamanho da embarcação nº {i+1}: ', range(1, 6))+1
+                bf_1.set_vesel_manual(vessel)
+        else:
+            bf_1.set_vessel_auto(number_of_vessels)    
         bf_2 = Game()
         print("#"*50)
         print("#"*50)
@@ -35,9 +38,12 @@ def selection_game() -> bool:
         input("#"*50)
             
         number_of_vessels = set_menu([f'{"Player: 2": ^20}\n', 'Selecione a quantidade de embarcações: '], range(1, 11))+1
-        for i in range (number_of_vessels):
-            vessel = set_menu(f'Tamanho da embarcação nº {i+1}: ', range(1, 6))+1
-            bf_2.set_vesel_manual(vessel)
+        if set_menu(title='Como deseja estabelecer as embarcações ?', items=['Automático', 'Manual']):
+            for i in range (number_of_vessels):
+                vessel = set_menu(f'Tamanho da embarcação nº {i+1}: ', range(1, 6))+1
+                bf_2.set_vesel_manual(vessel)
+        else:
+            bf_2.set_vessel_auto(number_of_vessels)    
             
         player_vs_player_local(bf_1, bf_2)
         
