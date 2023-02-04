@@ -1,7 +1,7 @@
 # Batalha Naval
 ![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
 
-Este projeto tem como objetivo a execução do clássico jogo "Batalha Naval" de maneira interativa pelo terminal.
+Este projeto tem como objetivo a execução do clássico jogo Batalha Naval de maneira interativa pelo terminal.
 
 Conteúdo:
 - Tecnologias
@@ -14,7 +14,11 @@ Conteúdo:
 ## Tecnologias
 Esse projeto utiliza as seguintes bibliotecas:
 
-- ...
+- Python = 3.10.15
+- termcolor
+- pynput
+- os
+- random
 
 ## Instalação/Execução
 Foi utilizado o [Python](https://www.python.org/) v3.10.15.
@@ -82,7 +86,27 @@ python __init__.py
 ```
 
 ## Instruções
+O projeto foi todo desenvolvido para ser interativo via teclado com o terminal.
+Este jogo possui a regra que as embarcações não podem se tocar na horizontal e vertical.
 
+Para percorrer os menus de opções utilize as 'Setas' do teclado e para selecionar utilize o 'Enter'.
+Como o desenvolvimento foi via terminal, utilizando characteres a água é dada pelo token '~', e cada embarcação corresponde a quantidade de casas que ele é posicionado. Ex:. '1', '2' '2', '3' '3' '3', etc.
+
+O jogo possui 3 modalidades diferentes:
+- Player vs. Máquina
+- Player vs. Player (Local)
+- Player vs. Player (Rede)
+
+### Player vs. Máquina
+Ao selecionar a quantidade de embarcações elas são posicionadas de maneira aleatória. O jogador possui 3 tiros por tentativa, ao finalizar o turno poderá prosseguir ou encerrar. Finalizando o jogo acertando todas as embarcações ou encerrando é mostrado as tentativas e tiros para o usuário.
+
+### Player vs. Player (Local)
+O jogadores poderão optar pela quantidade de embarcações, e então se desejam posiciona-las de maneira automática ou manual.
+Automatica: Embarcações posicionadas de maneira aleatória.
+Manual: O jogador pode escolher qual embarcação posicionar ao longo do mapa. Caso a posição esteja disponível ficará em VERDE, caso contrário em 'Vermelho'.
+
+### Player vs. Player (Rede)
+Em desenvolvimento ...
 
 ## Autores
 Projeto desenvolvido pelo Dev:
@@ -91,7 +115,22 @@ Projeto desenvolvido pelo Dev:
 
 ## Organização do projeto
 ```sh
-...
+├── Naval_Battle
+│   ├── License
+│   ├── Readme.md
+│   ├── naval_battle
+│   │   ├── __init__.py
+│   │   ├── controller
+│   │   │   └── Readme.md
+│   │   ├── model
+│   │   │   ├── clear.py
+│   │   │   ├── Game.py
+│   │   │   └── Menu.py
+│   │   └── view
+│   │       └── interface.py
+    └── utils
+        ├── environment.yml
+        └── requirements.txt
 ```
 
 ## License
