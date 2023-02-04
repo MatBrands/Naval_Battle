@@ -258,8 +258,7 @@ class Game:
                 if j+vessel > LEN_BOARD:
                     if j+k < LEN_BOARD:
                         self.status = True
-        
-        
+                
         for k in range(vessel):
             if self.orientation%2:
                 if i+k < LEN_BOARD:
