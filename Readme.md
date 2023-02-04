@@ -116,18 +116,18 @@ Projeto desenvolvido pelo Dev:
 ## Organização do projeto
 ```sh
 ├── Naval_Battle
-│   ├── License
-│   ├── Readme.md
-│   ├── naval_battle
-│   │   ├── __init__.py
-│   │   ├── controller
-│   │   │   └── Readme.md
-│   │   ├── model
-│   │   │   ├── clear.py
-│   │   │   ├── Game.py
-│   │   │   └── Menu.py
-│   │   └── view
-│   │       └── interface.py
+    ├── License
+    ├── Readme.md
+    ├── naval_battle
+    │   ├── __init__.py
+    │   ├── controller
+    │   │   └── Readme.md
+    │   ├── model
+    │   │   ├── clear.py
+    │   │   ├── Game.py
+    │   │   └── Menu.py
+    │   └── view
+    │       └── interface.py
     └── utils
         ├── environment.yml
         └── requirements.txt
