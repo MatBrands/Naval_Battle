@@ -217,67 +217,63 @@ class Game:
         if self.orientation%2:
             if i-1 >= 0:
                 if current_board[i-1][j] not in '~':
-                    current_board[i-1][j] = colored(current_board[i-1][j], 'red')
                     self.status = True
             if i+vessel < LEN_BOARD:
                 if current_board[i+vessel][j] not in '~':
-                    current_board[i+vessel][j] = colored(current_board[i+vessel][j], 'red')
                     self.status = True
         else:
             if j-1 >= 0:
                 if current_board[i][j-1] not in '~':
-                    current_board[i][j-1] = colored(current_board[i][j-1], 'red')
                     self.status = True
             if j+vessel < LEN_BOARD:
                 if current_board[i][j+vessel] not in '~':
-                    current_board[i][j+vessel] = colored(current_board[i][j+vessel], 'red')
                     self.status = True
         
         for k in range(vessel):
             if self.orientation%2:
                 if i+k < LEN_BOARD:
                     if current_board[i+k][j] not in '~':
-                        current_board[i+k][j] = colored(current_board[i+k][j], 'red')
                         self.status = True
                     if j+1 < LEN_BOARD:
                         if current_board[i+k][j+1] not in '~':
-                            current_board[i+k][j+1] = colored(current_board[i+k][j+1], 'red')
                             self.status = True
                     if j-1 >= 0:
                         if current_board[i+k][j-1] not in '~':
-                            current_board[i+k][j-1] = colored(current_board[i+k][j-1], 'red')
                             self.status = True
                 
                 if i+vessel > LEN_BOARD:
                     if i+k < LEN_BOARD:
-                        current_board[i+k][j] = colored(str(vessel), 'red')
                         self.status = True
-                # 
-                if i+k < LEN_BOARD and current_board[i+k][j] in '~': # Ok
-                    current_board[i+k][j] = colored(str(vessel), 'green')
             else:
                 if j+k < LEN_BOARD:
                     if current_board[i][j+k] not in '~':
-                        current_board[i][j+k] = colored(current_board[i][j+k], 'red')
                         self.status = True
                     if i+1 < LEN_BOARD:
                         if current_board[i+1][j+k] not in '~':
-                            current_board[i+1][j+k] = colored(current_board[i+1][j+k], 'red')
                             self.status = True
                     if i-1 >= 0:
                         if current_board[i-1][j+k] not in '~':
-                            current_board[i-1][j+k] = colored(current_board[i-1][j+k], 'red')
                             self.status = True
                 
                 if j+vessel > LEN_BOARD:
                     if j+k < LEN_BOARD:
-                        current_board[i][j+k] = colored(str(vessel), 'red')
                         self.status = True
-                
-                # 
-                if j+k < LEN_BOARD and current_board[i][j+k] in '~': # Ok
-                    current_board[i][j+k] = colored(str(vessel), 'green')
         
+        
+        for k in range(vessel):
+            if self.orientation%2:
+                if i+k < LEN_BOARD:
+                    if self.status:
+                        current_board[i+k][j] = colored(str(vessel), 'red')
+                    else:
+                        current_board[i+k][j] = colored(str(vessel), 'green')
+            else:
+                if j+k < LEN_BOARD:
+                    if self.status:
+                        current_board[i][j+k] = colored(str(vessel), 'red')
+                    else:
+                        current_board[i][j+k] = colored(str(vessel), 'green')
+            
         for i in range(LEN_BOARD+1):
             if i: print(i, end='   ')
             else: print(' ', end='   ')
