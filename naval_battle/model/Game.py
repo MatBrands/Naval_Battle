@@ -283,7 +283,6 @@ class Game:
             print(f'{letter[i]}', end='   ')
             for j in range(LEN_BOARD):
                 if current_board[i][j] in '~': print(colored(current_board[i][j], 'blue'), end='   ')
-                elif current_board[i][j] in '*': print(colored(current_board[i][j], 'red'), end='   ')
                 elif current_board[i][j] in '1': print(colored(current_board[i][j], 'yellow'), end='   ')
                 elif current_board[i][j] in '2': print(colored(current_board[i][j], 'white'), end='   ')
                 elif current_board[i][j] in '3': print(colored(current_board[i][j], 'cyan'), end='   ')
