@@ -120,7 +120,7 @@ class Game:
         
             if self.acess and not self.status:
                 i = self.i % LEN_BOARD
-                j= self.j % LEN_BOARD
+                j = self.j % LEN_BOARD
                 for k in range(vessel):
                     if self.orientation:
                         self.board[i+k][j] = str(vessel)
