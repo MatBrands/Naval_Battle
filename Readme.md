@@ -103,7 +103,7 @@ Ao selecionar a quantidade de embarcações elas são posicionadas de maneira al
 ### Player vs. Player (Local)
 O jogadores poderão optar pela quantidade de embarcações, e então se desejam posiciona-las de maneira automática ou manual.
 Automatica: Embarcações posicionadas de maneira aleatória.
-Manual: O jogador pode escolher qual embarcação posicionar ao longo do mapa. Caso a posição esteja disponível ficará em VERDE, caso contrário em VERMELHO.
+Manual: O jogador pode escolher qual embarcação posicionar ao longo do mapa. Caso a posição esteja disponível ficará em VERDE, caso contrário em VERMELHO. Para percorrer o campo utilizar as 'Setas' do teclado, mudar a orientação para vertical ou horizontal com 'Espaço' e selecionar com 'Enter'.
 
 ### Player vs. Player (Rede)
 Em desenvolvimento ...
