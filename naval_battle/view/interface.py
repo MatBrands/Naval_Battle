@@ -99,7 +99,8 @@ def player_vs_player_local(bf_1: Game, bf_2: Game) -> bool:
         print('Vitória do Player 2 !')
     else:
         print('Empate')
-        
+    
+    input()
     print(f'Player 1: {bf_2.tentative} tentativas, com um total de {bf_2.shots_count} erros')
     input(f'Player 2: {bf_1.tentative} tentativas, com um total de {bf_1.shots_count} erros')
         
